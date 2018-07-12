@@ -26,7 +26,7 @@ ifeq ($(config),debug)
   DEFINES   += -DDEBUG
   INCLUDES  += -I../Include -I../Source
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) -g -Wall
+  CFLAGS    += $(CPPFLAGS) -g -Wall -fPIC
   CXXFLAGS  += $(CFLAGS)
   LDFLAGS   +=
   LIBS      +=
@@ -48,7 +48,7 @@ ifeq ($(config),release)
   DEFINES   += -DNDEBUG
   INCLUDES  += -I../Include -I../Source
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) -O2 -Wall
+  CFLAGS    += $(CPPFLAGS) -O2 -Wall -fPIC
   CXXFLAGS  += $(CFLAGS)
   LDFLAGS   += -s
   LIBS      +=
@@ -70,7 +70,7 @@ ifeq ($(config),debug64)
   DEFINES   += -DDEBUG
   INCLUDES  += -I../Include -I../Source
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) -m64 -g -Wall -m64
+  CFLAGS    += $(CPPFLAGS) -m64 -g -Wall -m64 -fPIC
   CXXFLAGS  += $(CFLAGS)
   LDFLAGS   += -m64 -L/usr/lib64
   LIBS      +=
@@ -92,7 +92,7 @@ ifeq ($(config),release64)
   DEFINES   += -DNDEBUG
   INCLUDES  += -I../Include -I../Source
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) -m64 -O2 -Wall -m64
+  CFLAGS    += $(CPPFLAGS) -m64 -O2 -Wall -m64 -fPIC
   CXXFLAGS  += $(CFLAGS)
   LDFLAGS   += -s -m64 -L/usr/lib64
   LIBS      +=
@@ -114,7 +114,7 @@ ifeq ($(config),debug32)
   DEFINES   += -DDEBUG
   INCLUDES  += -I../Include -I../Source
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) -m32 -g -Wall -m32
+  CFLAGS    += $(CPPFLAGS) -m32 -g -Wall -m32 -fPIC
   CXXFLAGS  += $(CFLAGS)
   LDFLAGS   += -m32 -L/usr/lib32
   LIBS      +=
@@ -136,7 +136,7 @@ ifeq ($(config),release32)
   DEFINES   += -DNDEBUG
   INCLUDES  += -I../Include -I../Source
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) -m32 -O2 -Wall -m32
+  CFLAGS    += $(CPPFLAGS) -m32 -O2 -Wall -m32 -fPIC
   CXXFLAGS  += $(CFLAGS)
   LDFLAGS   += -s -m32 -L/usr/lib32
   LIBS      +=
