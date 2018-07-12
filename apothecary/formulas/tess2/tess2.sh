@@ -44,6 +44,8 @@ function prepare() {
 	if [ "$TYPE" == "osx" ] ; then
 		mkdir -p build
 	fi
+	
+	sed -i '/^  CFLAGS    += / s/$/ -fPIC/' $FORMULA_DIR/tess2.make
 }
 
 # executed inside the lib src dir
